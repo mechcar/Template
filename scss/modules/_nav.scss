@@ -1,0 +1,150 @@
+@use "../mixins" as *;
+@use "../variables" as *;
+
+.nav {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: $brand--neutral;
+	background: linear-gradient(to left, $brand--neutral, $brand--alt--neutral);
+	height: 6rem;
+	padding: 2rem;
+	z-index: 2;
+
+	a {
+		color: $light-color;
+	}
+
+	&--desktop {
+		ul {
+			display: flex;
+			align-items: end;
+			justify-content: space-between;
+			width: 40rem;
+		}
+		@include layout-medium {
+			display: none;
+		}
+	}
+	&--mobile {
+		display: none;
+		.menu {
+			display: flex;
+			flex-direction: row;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			> li {
+				margin: 0 1rem;
+			}
+			&-button-container {
+				display: none;
+				height: 100%;
+				width: 3rem;
+				cursor: pointer;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+			&-button,
+			&-button::before,
+			&-button::after {
+				display: block;
+				background-color: $light-color;
+				position: absolute;
+				height: 0.3rem;
+				width: 3rem;
+				transition: transform 500ms cubic-bezier(0.23, 1, 0.32, 1);
+				border-radius: 0.05rem;
+			}
+			&-button::before {
+				content: "";
+				margin-top: -8px;
+			}
+			&-button::after {
+				content: "";
+				margin-top: 8px;
+			}
+		}
+		#menu-toggle {
+			display: none;
+
+			&:checked + .menu-button-container .menu-button::before {
+				margin-top: 0px;
+				transform: rotate(405deg);
+			}
+			&:checked + .menu-button-container .menu-button {
+				background: rgba(255, 255, 255, 0);
+			}
+			&:checked + .menu-button-container .menu-button::after {
+				margin-top: 0px;
+				transform: rotate(-405deg);
+			}
+		}
+		@include layout-medium {
+			display: flex;
+
+			.menu-button-container {
+				display: flex;
+			}
+			.menu {
+				position: absolute;
+				top: 1rem;
+				margin-top: 50px;
+				left: 0;
+				flex-direction: column;
+				width: 100%;
+				justify-content: center;
+				align-items: center;
+
+				> li {
+					display: flex;
+					justify-content: center;
+					margin: 0;
+					padding: 1rem;
+					width: 100%;
+					background-color: $brand--neutral;
+
+					&:hover {
+						background-color: $brand--dark;
+					}
+				}
+				> li:not(:last-child) {
+					border-bottom: 1px solid $border-color;
+				}
+			}
+			#menu-toggle {
+				~ .menu li {
+					height: 0;
+					margin: 0;
+					padding: 0;
+					border: 0;
+					transition: height 500ms cubic-bezier(0.23, 1, 0.32, 1);
+					a {
+						display: none;
+					}
+				}
+				&:checked ~ .menu li {
+					border: 1px solid $border-color;
+					padding: 2rem;
+					transition: height 500ms cubic-bezier(0.23, 1, 0.32, 1);
+					display: flex;
+					justify-content: center;
+					align-items: center;
+
+					a {
+						width: 100%;
+						height: 4rem;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						margin: 0;
+					}
+				}
+			}
+		}
+	}
+}

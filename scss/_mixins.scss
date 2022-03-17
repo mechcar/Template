@@ -1,0 +1,17 @@
+@use "./variables" as *;
+
+@mixin layout-large {
+	@media only screen and (max-width: $layout-large) {
+		@content;
+	}
+}
+@mixin layout-medium {
+	@media only screen and (max-width: $layout-medium) {
+		@content;
+	}
+}
+@mixin layout-small {
+    @media only screen and (max-width: $layout-small) {
+        @content;
+    }
+}

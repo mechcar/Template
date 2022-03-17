@@ -1,0 +1,14 @@
+@use "../variables" as *;
+
+.pane-banner {
+	background: url(../../assets/banners/financial_banner.jpg) center center
+		no-repeat;
+	background-size: cover;
+	margin-top: 6rem;
+	.page-title {
+		height: clamp(30rem, 25.8824rem + 11.7647vw, 40rem);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}

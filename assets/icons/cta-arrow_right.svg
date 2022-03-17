@@ -1,0 +1,13 @@
+<svg width="256" height="256" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1">
+ <desc>Created with Fabric.js 1.7.22</desc>
+
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_1" transform="translate(128 128) scale(0.72 0.72)">
+   <g id="svg_2" fill-rule=" nonzero" fill=" none" stroke-miterlimit="10" stroke-linejoin=" miter" stroke-linecap=" butt" stroke-dasharray=" none" stroke-width="0" stroke=" none" transform="translate(-175.05 -175.05) scale(3.89 3.89)">
+    <path id="svg_3" fill-rule=" nonzero" fill="#000000" stroke-miterlimit="10" stroke-linejoin=" miter" stroke-dasharray=" none" stroke=" none" stroke-linecap=" butt" d="m57.61592,58.799l-42.332,-42.333c-1.059,-1.059 -1.059,-2.776 0,-3.835l11.836,-11.837c1.059,-1.059 2.776,-1.059 3.835,0l42.333,42.333c1.059,1.059 1.059,2.776 0,3.835l-11.836,11.837c-1.059,1.059 -2.776,1.059 -3.836,0z"/>
+    <path id="svg_4" fill-rule=" nonzero" fill="#000000" stroke-miterlimit="10" stroke-linejoin=" miter" stroke-dasharray=" none" stroke=" none" stroke-linecap=" butt" d="m57.61592,31.201l-42.332,42.333c-1.059,1.059 -1.059,2.776 0,3.835l11.837,11.837c1.059,1.059 2.776,1.059 3.835,0l42.333,-42.333c1.059,-1.059 1.059,-2.776 0,-3.835l-11.837,-11.837c-1.059,-1.059 -2.776,-1.059 -3.836,0z"/>
+   </g>
+  </g>
+ </g>
+</svg>

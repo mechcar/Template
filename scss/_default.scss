@@ -1,0 +1,198 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+body {
+	font-family: $body-font;
+	background: $background-color;
+}
+h1,
+h2,
+h3,
+h4,
+p,
+a {
+	margin: $copy-margin;
+}
+h1,
+h2,
+h3,
+h4 {
+	font-family: $header-font;
+	color: $brand--alt--dark;
+}
+h1 {
+	font-size: clamp(2.4rem, 0.9176rem + 4.2353vw, 6rem);
+	font-weight: 700;
+}
+.page-title h1 {
+	font-size: clamp(5rem, 4.1765rem + 2.3529vw, 7rem);
+	color: $light-color;
+}
+h2 {
+	font-size: clamp(2rem, 0.9706rem + 2.9412vw, 4.5rem);
+	font-weight: 700;
+}
+.module-title h2 {
+	font-size: clamp(4rem, 3.3824rem + 1.7647vw, 5.5rem);
+	text-align: center;
+	margin: 0;
+	margin-top: 2rem;
+}
+h3 {
+	font-size: clamp(1.8rem, 1.1rem + 2vw, 3.5rem);
+	font-weight: 600;
+}
+h4 {
+	font-size: clamp(1.6rem, 1.1059rem + 1.4118vw, 2.8rem);
+	font-weight: 600;
+}
+p,
+a,
+li,
+label,
+input {
+	font-size: clamp(1.4rem, 1.3176rem + 0.2353vw, 1.6rem);
+	font-weight: 500;
+}
+a {
+	text-decoration: none;
+	cursor: pointer;
+	&:hover {
+		color: $brand--dark;
+	}
+}
+p {
+	max-width: 75ch;
+	line-height: clamp(2.1rem, 1.9765rem + 0.3529vw, 2.4rem);
+}
+.copy {
+	margin: 0 auto;
+	text-align: justify;
+	padding: 0 2rem;
+}
+li {
+	line-height: clamp(2.1rem, 1.9765rem + 0.3529vw, 2.4rem);
+	list-style-type: style disc;
+}
+.button {
+	display: inline-block;
+	position: relative;
+	padding: 2rem;
+	background: $brand--neutral;
+	color: $light-color;
+	border: 1px solid $border-color;
+	border-radius: 1rem;
+	overflow: hidden;
+	z-index: 1;
+	transition: all 0.3s;
+
+	@include layout-small {
+		padding: 1rem;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		transition: all 0.3s;
+		background: $brand--dark;
+		height: 100%;
+		width: 0;
+	}
+
+	&:hover {
+		color: $light-color;
+	}
+
+	&:hover::before {
+		width: 100%;
+	}
+
+	&-cta {
+		padding: 2rem 3rem;
+		position: relative;
+
+		@include layout-small {
+			padding: 1rem 2rem;
+		}
+
+		&::before {
+			width: 0;
+			height: 100%;
+			left: -25%;
+			transform: (skewX(45deg));
+		}
+
+		&:hover::before {
+			width: 150%;
+		}
+	}
+
+	&-dark {
+		background: $light-color;
+		color: $body-color;
+
+		&::before {
+			content: "";
+			background: $brand--alt--neutral;
+		}
+
+		&:hover {
+			color: $body-color;
+			border: 1px solid $body-color;
+		}
+	}
+}
+input {
+	&:hover {
+		cursor: pointer;
+	}
+}
+.submit {
+	padding: 0.5rem 2rem;
+	margin: 1rem 0;
+	border-radius: 1rem;
+	background-color: $brand--neutral;
+	color: $light-color;
+	border: 1px solid $border-color;
+	transition: all 0.3s;
+
+	&:hover {
+		background-color: $brand--dark;
+	}
+
+	&-dark {
+		background-color: $light-color;
+		color: $body-color;
+
+		&:hover {
+			color: $body-color;
+			border: 1px solid $body-color;
+			background-color: $brand--alt--neutral;
+		}
+	}
+}
+.logo {
+	font-size: clamp(3rem, 1.3254rem + 4.7847vw, 5rem);
+	letter-spacing: -0.5rem;
+	color: $brand--neutral;
+	-webkit-text-fill-color: $light-color;
+	-webkit-text-stroke-width: 0.1rem;
+	-webkit-text-stroke-color: $brand--alt--dark;
+}
+.pane-content {
+	padding: clamp(3rem, 2.1765rem + 2.3529vw, 5rem) 0;
+}
+.module {
+	max-width: $layout-large;
+	margin: 0 auto;
+	padding: clamp(3rem, 2.1765rem + 2.3529vw, 5rem) 2rem;
+}
+img {
+	max-width: 100%;
+	max-height: 35rem;
+}

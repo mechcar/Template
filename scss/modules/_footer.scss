@@ -1,0 +1,31 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.pane-footer {
+	.footer {
+		background: $brand--neutral;
+		background: linear-gradient(
+			to left,
+			$brand--neutral,
+			$brand--alt--neutral
+		);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 6rem;
+		padding: 2rem;
+
+		a {
+			color: $light-color;
+		}
+
+		&--desktop {
+			ul {
+				display: flex;
+				align-items: end;
+				justify-content: space-between;
+				width: 40rem;
+			}
+		}
+	}
+}
